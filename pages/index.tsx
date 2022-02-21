@@ -44,6 +44,10 @@ export default function Home() {
                className="w-full flex items-center px-5 py-2 my-3 duration-500 border-2 rounded-lg fill-current hover:scale-105 active:scale-95 hover:shadow-md hover:shadow-accent border-accent text-accent">
               <span className="ml-3 text-xl font-semibold md:ml-6">Sponsor me</span>
             </a>
+            <a href="https://ko-fi.com/paulknulst" target="_blank"
+               className="w-full flex items-center px-5 py-2 my-3 duration-500 border-2 rounded-lg fill-current hover:scale-105 active:scale-95 hover:shadow-md hover:shadow-accent border-accent text-accent">
+              <span className="ml-3 text-xl font-semibold md:ml-6">Buy me a Ko-Fi</span>
+            </a>
           </div>
         </main>
       </div>
