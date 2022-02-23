@@ -1,0 +1,32 @@
+version: "3.6"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${DOCKER_REGISTRY}/portofolio:v2
+    networks:
+      - traefik-public
+    env_file:
+      - .env.local
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.docker.network=traefik-public
+        - traefik.constraint-label=traefik-public
+        - traefik.http.routers.portofolio-http.rule=Host(`www.paulknulst.de`) || Host(`paulknulst.de`)
+        - traefik.http.routers.portofolio-http.entrypoints=http
+        - traefik.http.routers.portofolio-http.middlewares=https-redirect
+        - traefik.http.routers.portofolio-https.rule=Host(`www.paulknulst.de`) || Host(`paulknulst.de`)
+        - traefik.http.routers.portofolio-https.entrypoints=https
+        - traefik.http.routers.portofolio-https.tls=true
+        - traefik.http.routers.portofolio-https.tls.certresolver=le
+        - traefik.http.services.portofolio.loadbalancer.server.port=3000
+        - traefik.http.routers.portofolio-https.middlewares=security-headers
+networks:
+  traefik-public:
+    external: true
+  default:
+    external: false
+volumes:
+  db:

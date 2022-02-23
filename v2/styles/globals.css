@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply dark:bg-gray-800
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
