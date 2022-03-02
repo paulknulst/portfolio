@@ -1,15 +1,15 @@
 import '../styles/globals.css'
 import type {AppProps} from 'next/app'
 import {ThemeProvider} from "next-themes";
-import ContainerBlock from "@components/ContainerBlock";
+import MetaContainer from "@components/MetaContainer";
 
 function MyApp({Component, pageProps}: AppProps) {
     return (
         <div>
             <ThemeProvider attribute="class" enableSystem={true}>
-                <ContainerBlock>
+                <MetaContainer>
                     <Component {...pageProps} />
-                </ContainerBlock>
+                </MetaContainer>
             </ThemeProvider>
         </div>
     )

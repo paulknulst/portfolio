@@ -5,7 +5,7 @@ import Navbar from "@components/Navigation";
 import Footer from "@components/Footer";
 
 // @ts-ignore
-export default function ContainerBlock({children, ...customMeta}) {
+export default function MetaContainer({children, ...customMeta}) {
     const router = useRouter();
 
     const meta = {
